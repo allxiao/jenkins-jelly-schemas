@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="/lib/test" elementFormDefault="qualified">
+    <xsd:annotation>
+        <xsd:documentation>
+            A tag library to help with the tests.
+        </xsd:documentation>
+    </xsd:annotation>
+
+    <xsd:element name="bar">
+        <xsd:annotation>
+            <xsd:documentation>
+
+            </xsd:documentation>
+        </xsd:annotation>
+        <xsd:complexType mixed="true">
+            <xsd:sequence>
+                <xsd:any processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
+            </xsd:sequence>
+        </xsd:complexType>
+    </xsd:element>
+</xsd:schema>

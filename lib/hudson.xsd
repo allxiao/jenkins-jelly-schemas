@@ -1,0 +1,735 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="/lib/hudson" elementFormDefault="qualified">
+    <xsd:annotation>
+        <xsd:documentation>
+            A tag library to help building controls for the Jenkins built-in objects, such as project, job, task, build,
+            action, etc.
+        </xsd:documentation>
+    </xsd:annotation>
+
+    <xsd:element name="abstractItemLink">
+        <xsd:annotation>
+            <xsd:documentation>
+                Displays a link when given an AbstractItem. It is assumed that that Abstract
+                Item is passed in ${it}
+            </xsd:documentation>
+        </xsd:annotation>
+        <xsd:complexType mixed="true">
+            <xsd:sequence>
+                <xsd:any processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
+            </xsd:sequence>
+        </xsd:complexType>
+    </xsd:element>
+
+    <xsd:element name="actions">
+        <xsd:annotation>
+            <xsd:documentation>
+                Shows a list of tasks.
+            </xsd:documentation>
+        </xsd:annotation>
+        <xsd:complexType mixed="true">
+            <xsd:sequence>
+                <xsd:any processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
+            </xsd:sequence>
+            <xsd:attribute name="actions">
+                <xsd:annotation>
+                    <xsd:documentation>
+                        List of actions. Defaults to "it.allActions ?: it.actions"
+                    </xsd:documentation>
+                </xsd:annotation>
+            </xsd:attribute>
+        </xsd:complexType>
+    </xsd:element>
+
+    <xsd:element name="aggregated-failed-tests">
+        <xsd:annotation>
+            <xsd:documentation>
+                DEPRECATED
+            </xsd:documentation>
+        </xsd:annotation>
+        <xsd:complexType mixed="true">
+            <xsd:sequence>
+                <xsd:any processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
+            </xsd:sequence>
+        </xsd:complexType>
+    </xsd:element>
+
+    <xsd:element name="artifactList">
+        <xsd:annotation>
+            <xsd:documentation>
+                Generates a listing of the build artifacts.
+                Depending on the size of the artifact, this will either produce a list or a link to the directory view.
+            </xsd:documentation>
+        </xsd:annotation>
+        <xsd:complexType mixed="true">
+            <xsd:sequence>
+                <xsd:any processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
+            </xsd:sequence>
+            <xsd:attribute name="build" use="required">
+                <xsd:annotation>
+                    <xsd:documentation>
+                        Build object for which the artifacts are displayed
+                    </xsd:documentation>
+                </xsd:annotation>
+            </xsd:attribute>
+            <xsd:attribute name="caption" use="required">
+                <xsd:annotation>
+                    <xsd:documentation>
+                        Human readable title text
+                    </xsd:documentation>
+                </xsd:annotation>
+            </xsd:attribute>
+            <xsd:attribute name="baseURL">
+                <xsd:annotation>
+                    <xsd:documentation>
+                        If the hyperlink to artifacts are at another URL, specify the prefix.
+                    </xsd:documentation>
+                </xsd:annotation>
+            </xsd:attribute>
+        </xsd:complexType>
+    </xsd:element>
+
+    <xsd:element name="ballColorTd">
+        <xsd:annotation>
+            <xsd:documentation>
+                Display the ball in a TD.
+            </xsd:documentation>
+        </xsd:annotation>
+        <xsd:complexType mixed="true">
+            <xsd:sequence>
+                <xsd:any processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
+            </xsd:sequence>
+            <xsd:attribute name="it">
+                <xsd:annotation>
+                    <xsd:documentation>
+                        Color of the ball or null to skip drawing.
+                    </xsd:documentation>
+                </xsd:annotation>
+            </xsd:attribute>
+            <xsd:attribute name="iconSizeClass">
+                <xsd:annotation>
+                    <xsd:documentation>
+                        Specifies the size of the icon. If unspecified, it inherits from
+                        the nearest setting in the ancestor call tree.
+                        Possible values are "icon-sm" (16x16), "icon-md" (24x24), "icon-lg" (32x32), "icon-xlg" (48x48)
+                    </xsd:documentation>
+                </xsd:annotation>
+            </xsd:attribute>
+            <xsd:attribute name="style">
+                <xsd:annotation>
+                    <xsd:documentation>
+                        Additional CSS styles to apply.
+                    </xsd:documentation>
+                </xsd:annotation>
+            </xsd:attribute>
+        </xsd:complexType>
+    </xsd:element>
+
+    <xsd:element name="buildCaption">
+        <xsd:annotation>
+            <xsd:documentation>
+
+            </xsd:documentation>
+        </xsd:annotation>
+        <xsd:complexType mixed="true">
+            <xsd:sequence>
+                <xsd:any processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
+            </xsd:sequence>
+        </xsd:complexType>
+    </xsd:element>
+
+    <xsd:element name="buildEnvVar">
+        <xsd:annotation>
+            <xsd:documentation>
+                Renders a help entry for one environment variable. See EnvironmentContributor. The body of this tag
+                renders the content.
+            </xsd:documentation>
+        </xsd:annotation>
+        <xsd:complexType mixed="true">
+            <xsd:sequence>
+                <xsd:any processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
+            </xsd:sequence>
+            <xsd:attribute name="name" use="required">
+                <xsd:annotation>
+                    <xsd:documentation>
+                        Name of the environment variable.
+                    </xsd:documentation>
+                </xsd:annotation>
+            </xsd:attribute>
+        </xsd:complexType>
+    </xsd:element>
+
+    <xsd:element name="buildHealth">
+        <xsd:annotation>
+            <xsd:documentation>
+
+            </xsd:documentation>
+        </xsd:annotation>
+        <xsd:complexType mixed="true">
+            <xsd:sequence>
+                <xsd:any processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
+            </xsd:sequence>
+        </xsd:complexType>
+    </xsd:element>
+
+    <xsd:element name="buildLink">
+        <xsd:annotation>
+            <xsd:documentation>
+
+            </xsd:documentation>
+        </xsd:annotation>
+        <xsd:complexType mixed="true">
+            <xsd:sequence>
+                <xsd:any processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
+            </xsd:sequence>
+        </xsd:complexType>
+    </xsd:element>
+
+    <xsd:element name="buildListTable">
+        <xsd:annotation>
+            <xsd:documentation>
+                Creates a table of builds.
+            </xsd:documentation>
+        </xsd:annotation>
+        <xsd:complexType mixed="true">
+            <xsd:sequence>
+                <xsd:any processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
+            </xsd:sequence>
+            <xsd:attribute name="builds" use="required">
+                <xsd:annotation>
+                    <xsd:documentation>
+                        A collection of builds to be displayed.
+                    </xsd:documentation>
+                </xsd:annotation>
+            </xsd:attribute>
+        </xsd:complexType>
+    </xsd:element>
+
+    <xsd:element name="buildProgressBar">
+        <xsd:annotation>
+            <xsd:documentation>
+                Progress bar for a build in progress.
+            </xsd:documentation>
+        </xsd:annotation>
+        <xsd:complexType mixed="true">
+            <xsd:sequence>
+                <xsd:any processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
+            </xsd:sequence>
+            <xsd:attribute name="build" use="required">
+                <xsd:annotation>
+                    <xsd:documentation>
+                        Build in progress. Must have a url property.
+                    </xsd:documentation>
+                </xsd:annotation>
+            </xsd:attribute>
+            <xsd:attribute name="executor">
+                <xsd:annotation>
+                    <xsd:documentation>
+                        Executor that's carrying out the build. If null, defaults to "build.executor"
+                    </xsd:documentation>
+                </xsd:annotation>
+            </xsd:attribute>
+        </xsd:complexType>
+    </xsd:element>
+
+    <xsd:element name="buildRangeLink">
+        <xsd:annotation>
+            <xsd:documentation>
+
+            </xsd:documentation>
+        </xsd:annotation>
+        <xsd:complexType mixed="true">
+            <xsd:sequence>
+                <xsd:any processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
+            </xsd:sequence>
+        </xsd:complexType>
+    </xsd:element>
+
+    <xsd:element name="buildStatusSummary">
+        <xsd:annotation>
+            <xsd:documentation>
+
+            </xsd:documentation>
+        </xsd:annotation>
+        <xsd:complexType mixed="true">
+            <xsd:sequence>
+                <xsd:any processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
+            </xsd:sequence>
+        </xsd:complexType>
+    </xsd:element>
+
+    <xsd:element name="editableDescription">
+        <xsd:annotation>
+            <xsd:documentation>
+                Renders ${it.description} and then allow it to be editable in place,
+                if the current user has the specified permission.
+            </xsd:documentation>
+        </xsd:annotation>
+        <xsd:complexType mixed="true">
+            <xsd:sequence>
+                <xsd:any processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
+            </xsd:sequence>
+            <xsd:attribute name="permission" use="required">
+                <xsd:annotation>
+                    <xsd:documentation>
+                        If the current user doesn't have this permission, the description
+                        is not editable.
+                    </xsd:documentation>
+                </xsd:annotation>
+            </xsd:attribute>
+        </xsd:complexType>
+    </xsd:element>
+
+    <xsd:element name="editTypeIcon">
+        <xsd:annotation>
+            <xsd:documentation>
+
+            </xsd:documentation>
+        </xsd:annotation>
+        <xsd:complexType mixed="true">
+            <xsd:sequence>
+                <xsd:any processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
+            </xsd:sequence>
+        </xsd:complexType>
+    </xsd:element>
+
+    <xsd:element name="executors">
+        <xsd:annotation>
+            <xsd:documentation>
+                Displays the status of executors.
+            </xsd:documentation>
+        </xsd:annotation>
+        <xsd:complexType mixed="true">
+            <xsd:sequence>
+                <xsd:any processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
+            </xsd:sequence>
+            <xsd:attribute name="computers">
+                <xsd:annotation>
+                    <xsd:documentation>
+                        If specified, this is the list of computers whose executors are rendered. If omitted, all the
+                        computers
+                        in the system will be rendered.
+                    </xsd:documentation>
+                </xsd:annotation>
+            </xsd:attribute>
+        </xsd:complexType>
+    </xsd:element>
+
+    <xsd:element name="failed-test">
+        <xsd:annotation>
+            <xsd:documentation>
+                DEPRECATED
+            </xsd:documentation>
+        </xsd:annotation>
+        <xsd:complexType mixed="true">
+            <xsd:sequence>
+                <xsd:any processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
+            </xsd:sequence>
+        </xsd:complexType>
+    </xsd:element>
+
+    <xsd:element name="help">
+        <xsd:annotation>
+            <xsd:documentation>
+
+            </xsd:documentation>
+        </xsd:annotation>
+        <xsd:complexType mixed="true">
+            <xsd:sequence>
+                <xsd:any processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
+            </xsd:sequence>
+        </xsd:complexType>
+    </xsd:element>
+
+    <xsd:element name="iconSize">
+        <xsd:annotation>
+            <xsd:documentation>
+
+            </xsd:documentation>
+        </xsd:annotation>
+        <xsd:complexType mixed="true">
+            <xsd:sequence>
+                <xsd:any processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
+            </xsd:sequence>
+        </xsd:complexType>
+    </xsd:element>
+
+    <xsd:element name="jobLink">
+        <xsd:annotation>
+            <xsd:documentation>
+                Generates a link to a job.
+            </xsd:documentation>
+        </xsd:annotation>
+        <xsd:complexType mixed="true">
+            <xsd:sequence>
+                <xsd:any processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
+            </xsd:sequence>
+            <xsd:attribute name="job" use="required">
+                <xsd:annotation>
+                    <xsd:documentation>
+                        Job object to be displayed.
+                    </xsd:documentation>
+                </xsd:annotation>
+            </xsd:attribute>
+        </xsd:complexType>
+    </xsd:element>
+
+    <xsd:element name="listScmBrowsers">
+        <xsd:annotation>
+            <xsd:documentation>
+                List browser SCMs
+            </xsd:documentation>
+        </xsd:annotation>
+        <xsd:complexType mixed="true">
+            <xsd:sequence>
+                <xsd:any processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
+            </xsd:sequence>
+            <xsd:attribute name="name" use="required">
+                <xsd:annotation>
+                    <xsd:documentation>
+                        form field name.
+                    </xsd:documentation>
+                </xsd:annotation>
+            </xsd:attribute>
+        </xsd:complexType>
+    </xsd:element>
+
+    <xsd:element name="logRecords">
+        <xsd:annotation>
+            <xsd:documentation>
+                Displays a list of log records.
+            </xsd:documentation>
+        </xsd:annotation>
+        <xsd:complexType mixed="true">
+            <xsd:sequence>
+                <xsd:any processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
+            </xsd:sequence>
+            <xsd:attribute name="logRecords" use="required">
+                <xsd:annotation>
+                    <xsd:documentation>
+                        Records to be displayed (assumed to be in reverse chronologic order).
+                    </xsd:documentation>
+                </xsd:annotation>
+            </xsd:attribute>
+        </xsd:complexType>
+    </xsd:element>
+
+    <xsd:element name="node">
+        <xsd:annotation>
+            <xsd:documentation>
+                Displays a link to a node.
+            </xsd:documentation>
+        </xsd:annotation>
+        <xsd:complexType mixed="true">
+            <xsd:sequence>
+                <xsd:any processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
+            </xsd:sequence>
+            <xsd:attribute name="value" use="required">
+                <xsd:annotation>
+                    <xsd:documentation></xsd:documentation>
+                </xsd:annotation>
+            </xsd:attribute>
+            <xsd:attribute name="valueStr" use="optional">
+                <xsd:annotation>
+                    <xsd:documentation></xsd:documentation>
+                </xsd:annotation>
+            </xsd:attribute>
+        </xsd:complexType>
+    </xsd:element>
+
+    <xsd:element name="progressBar">
+        <xsd:annotation>
+            <xsd:documentation>
+
+            </xsd:documentation>
+        </xsd:annotation>
+        <xsd:complexType mixed="true">
+            <xsd:sequence>
+                <xsd:any processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
+            </xsd:sequence>
+        </xsd:complexType>
+    </xsd:element>
+
+    <xsd:element name="progressiveText">
+        <xsd:annotation>
+            <xsd:documentation>
+
+            </xsd:documentation>
+        </xsd:annotation>
+        <xsd:complexType mixed="true">
+            <xsd:sequence>
+                <xsd:any processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
+            </xsd:sequence>
+        </xsd:complexType>
+    </xsd:element>
+
+    <xsd:element name="projectView">
+        <xsd:annotation>
+            <xsd:documentation>
+                Renders a list of jobs and their key information.
+            </xsd:documentation>
+        </xsd:annotation>
+        <xsd:complexType mixed="true">
+            <xsd:sequence>
+                <xsd:any processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
+            </xsd:sequence>
+            <xsd:attribute name="jobs" use="required">
+                <xsd:annotation>
+                    <xsd:documentation>
+                        Items to show.
+                    </xsd:documentation>
+                </xsd:annotation>
+            </xsd:attribute>
+            <xsd:attribute name="useFullName" use="optional">
+                <xsd:annotation>
+                    <xsd:documentation>
+                        May be interpreted by columns to display the full name of a job.
+                    </xsd:documentation>
+                </xsd:annotation>
+            </xsd:attribute>
+            <xsd:attribute name="jobBaseUrl">
+                <xsd:annotation>
+                    <xsd:documentation>
+                        Deprecated. Using this attribute has no effect.
+                    </xsd:documentation>
+                </xsd:annotation>
+            </xsd:attribute>
+            <xsd:attribute name="showViewTabs" use="optional">
+                <xsd:annotation>
+                    <xsd:documentation>
+                        If the caller rendered a view tabes, set this attribute so that CSS is adjusted accordingly.
+                    </xsd:documentation>
+                </xsd:annotation>
+            </xsd:attribute>
+            <xsd:attribute name="views">
+                <xsd:annotation>
+                    <xsd:documentation>
+                        If non-null, render nested views.
+                    </xsd:documentation>
+                </xsd:annotation>
+            </xsd:attribute>
+            <xsd:attribute name="indenter">
+                <xsd:annotation>
+                    <xsd:documentation>
+                        Optional Indenter instance used to indent items.
+                    </xsd:documentation>
+                </xsd:annotation>
+            </xsd:attribute>
+            <xsd:attribute name="columnExtensions">
+                <xsd:annotation>
+                    <xsd:documentation>
+                        List view columns to render. If omitted, the default ones from ListView.getDefaultColumns() are
+                        used.
+                    </xsd:documentation>
+                </xsd:annotation>
+            </xsd:attribute>
+            <xsd:attribute name="itemGroup" use="optional">
+                <xsd:annotation>
+                    <xsd:documentation>
+                        The containing group, for purposes of name calculation.
+                    </xsd:documentation>
+                </xsd:annotation>
+            </xsd:attribute>
+        </xsd:complexType>
+    </xsd:element>
+
+    <xsd:element name="projectViewNested">
+        <xsd:annotation>
+            <xsd:documentation>
+
+            </xsd:documentation>
+        </xsd:annotation>
+        <xsd:complexType mixed="true">
+            <xsd:sequence>
+                <xsd:any processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
+            </xsd:sequence>
+        </xsd:complexType>
+    </xsd:element>
+
+    <xsd:element name="projectViewRow">
+        <xsd:annotation>
+            <xsd:documentation>
+
+            </xsd:documentation>
+        </xsd:annotation>
+        <xsd:complexType mixed="true">
+            <xsd:sequence>
+                <xsd:any processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
+            </xsd:sequence>
+        </xsd:complexType>
+    </xsd:element>
+
+    <xsd:element name="propertyTable">
+        <xsd:annotation>
+            <xsd:documentation>
+                Display sortable table of properties.
+            </xsd:documentation>
+        </xsd:annotation>
+        <xsd:complexType mixed="true">
+            <xsd:sequence>
+                <xsd:any processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
+            </xsd:sequence>
+            <xsd:attribute name="items" use="required">
+                <xsd:annotation>
+                    <xsd:documentation>
+                        A Map object that gets rendered as a table.
+                    </xsd:documentation>
+                </xsd:annotation>
+            </xsd:attribute>
+        </xsd:complexType>
+    </xsd:element>
+
+    <xsd:element name="queue">
+        <xsd:annotation>
+            <xsd:documentation>
+                Displays the build queue as &lt;l:pane&gt;
+            </xsd:documentation>
+        </xsd:annotation>
+        <xsd:complexType mixed="true">
+            <xsd:sequence>
+                <xsd:any processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
+            </xsd:sequence>
+            <xsd:attribute name="items" use="required">
+                <xsd:annotation>
+                    <xsd:documentation>
+                        Queue items to be displayed. Normally you should specify ${app.queue.items},
+                        but for example you can specify a sublist after some filtering to narrow down
+                        the list.
+                    </xsd:documentation>
+                </xsd:annotation>
+            </xsd:attribute>
+            <xsd:attribute name="filtered" use="optional">
+                <xsd:annotation>
+                    <xsd:documentation>
+                        Indicates that the queue has been filtered, i.e. might not show all items.
+                    </xsd:documentation>
+                </xsd:annotation>
+            </xsd:attribute>
+        </xsd:complexType>
+    </xsd:element>
+
+    <xsd:element name="rssBar-with-iconSize">
+        <xsd:annotation>
+            <xsd:documentation>
+
+            </xsd:documentation>
+        </xsd:annotation>
+        <xsd:complexType mixed="true">
+            <xsd:sequence>
+                <xsd:any processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
+            </xsd:sequence>
+        </xsd:complexType>
+    </xsd:element>
+
+    <xsd:element name="rssBar">
+        <xsd:annotation>
+            <xsd:documentation>
+
+            </xsd:documentation>
+        </xsd:annotation>
+        <xsd:complexType mixed="true">
+            <xsd:sequence>
+                <xsd:any processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
+            </xsd:sequence>
+        </xsd:complexType>
+    </xsd:element>
+
+    <xsd:element name="scriptConsole">
+        <xsd:annotation>
+            <xsd:documentation>
+
+            </xsd:documentation>
+        </xsd:annotation>
+        <xsd:complexType mixed="true">
+            <xsd:sequence>
+                <xsd:any processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
+            </xsd:sequence>
+        </xsd:complexType>
+    </xsd:element>
+
+    <xsd:element name="setIconSize">
+        <xsd:annotation>
+            <xsd:documentation>
+
+            </xsd:documentation>
+        </xsd:annotation>
+        <xsd:complexType mixed="true">
+            <xsd:sequence>
+                <xsd:any processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
+            </xsd:sequence>
+        </xsd:complexType>
+    </xsd:element>
+
+    <xsd:element name="summary">
+        <xsd:annotation>
+            <xsd:documentation>
+                Displays a link with a large icon. Used in the project top page.
+            </xsd:documentation>
+        </xsd:annotation>
+        <xsd:complexType mixed="true">
+            <xsd:sequence>
+                <xsd:any processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
+            </xsd:sequence>
+            <xsd:attribute name="icon" use="required">
+                <xsd:annotation>
+                    <xsd:documentation>
+                        The icon class name e.g. 'icon-folder'.
+
+                        On older versions of Jenkins, this attribute value used to be a link to the raw icon image,
+                        where relative
+                        paths were resolved against images/48x48 and absolute paths (that start with '/') were resolved
+                        against
+                        the context root of Hudson.
+                    </xsd:documentation>
+                </xsd:annotation>
+            </xsd:attribute>
+            <xsd:attribute name="href">
+                <xsd:annotation>
+                    <xsd:documentation>
+                        where the summary icon links to.
+                    </xsd:documentation>
+                </xsd:annotation>
+            </xsd:attribute>
+            <xsd:attribute name="iconOnly">
+                <xsd:annotation>
+                    <xsd:documentation>
+                        if true, hyperlink will only cover the icon, not the body.
+                    </xsd:documentation>
+                </xsd:annotation>
+            </xsd:attribute>
+            <xsd:attribute name="permission">
+                <xsd:annotation>
+                    <xsd:documentation>
+                        permission object. If specified, the link will be displayed only if you have a permission
+                    </xsd:documentation>
+                </xsd:annotation>
+            </xsd:attribute>
+        </xsd:complexType>
+    </xsd:element>
+
+    <xsd:element name="test-result">
+        <xsd:annotation>
+            <xsd:documentation>
+                DEPRECATED
+            </xsd:documentation>
+        </xsd:annotation>
+        <xsd:complexType mixed="true">
+            <xsd:sequence>
+                <xsd:any processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
+            </xsd:sequence>
+        </xsd:complexType>
+    </xsd:element>
+
+    <xsd:element name="thirdPartyLicenses">
+        <xsd:annotation>
+            <xsd:documentation>
+
+            </xsd:documentation>
+        </xsd:annotation>
+        <xsd:complexType mixed="true">
+            <xsd:sequence>
+                <xsd:any processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
+            </xsd:sequence>
+        </xsd:complexType>
+    </xsd:element>
+</xsd:schema>
