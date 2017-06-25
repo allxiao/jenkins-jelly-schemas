@@ -3,8 +3,14 @@
 Provides schema definitions for the Jelly tag libraries defined in the Jenkins core project.
 
 The schemas were generated with the script [`schema-gen.rb`](https://github.com/ArieShout/jenkins-jelly-schemas/blob/master/schema-gen.rb)
-from [the tag libraries in the Jenkins core](https://github.com/jenkinsci/jenkins/tree/master/core/src/main/resources/lib)
-with some manual updates on the `targetNamespace` and `documentation`.
+from [the tag libraries in the Jenkins core](https://github.com/jenkinsci/jenkins/tree/master/core/src/main/resources/lib).
+
+```sh
+schema-gen.rb path/to/jenkins/resources/lib/form
+schema-gen.rb path/to/jenkins/resources/lib/hudson
+schema-gen.rb path/to/jenkins/resources/lib/layout
+schema-gen.rb path/to/jenkins/resources/lib/test
+```
 
 This completes the schema set suggested in the official wiki page
 [Writing Jelly views with IDE assistance](https://wiki.jenkins.io/display/JENKINS/Writing+Jelly+views+with+IDE+assistance).

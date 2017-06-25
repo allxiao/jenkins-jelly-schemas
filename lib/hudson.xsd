@@ -2,8 +2,7 @@
 <xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="/lib/hudson" elementFormDefault="qualified">
     <xsd:annotation>
         <xsd:documentation>
-            A tag library to help building controls for the Jenkins built-in objects, such as project, job, task, build,
-            action, etc.
+            A tag library to help building controls for the Jenkins built-in objects, such as project, job, task, build, action, etc.
         </xsd:documentation>
     </xsd:annotation>
 
@@ -127,9 +126,7 @@
 
     <xsd:element name="buildCaption">
         <xsd:annotation>
-            <xsd:documentation>
-
-            </xsd:documentation>
+            <xsd:documentation></xsd:documentation>
         </xsd:annotation>
         <xsd:complexType mixed="true">
             <xsd:sequence>
@@ -161,9 +158,7 @@
 
     <xsd:element name="buildHealth">
         <xsd:annotation>
-            <xsd:documentation>
-
-            </xsd:documentation>
+            <xsd:documentation></xsd:documentation>
         </xsd:annotation>
         <xsd:complexType mixed="true">
             <xsd:sequence>
@@ -174,9 +169,7 @@
 
     <xsd:element name="buildLink">
         <xsd:annotation>
-            <xsd:documentation>
-
-            </xsd:documentation>
+            <xsd:documentation></xsd:documentation>
         </xsd:annotation>
         <xsd:complexType mixed="true">
             <xsd:sequence>
@@ -234,9 +227,7 @@
 
     <xsd:element name="buildRangeLink">
         <xsd:annotation>
-            <xsd:documentation>
-
-            </xsd:documentation>
+            <xsd:documentation></xsd:documentation>
         </xsd:annotation>
         <xsd:complexType mixed="true">
             <xsd:sequence>
@@ -247,9 +238,7 @@
 
     <xsd:element name="buildStatusSummary">
         <xsd:annotation>
-            <xsd:documentation>
-
-            </xsd:documentation>
+            <xsd:documentation></xsd:documentation>
         </xsd:annotation>
         <xsd:complexType mixed="true">
             <xsd:sequence>
@@ -282,9 +271,7 @@
 
     <xsd:element name="editTypeIcon">
         <xsd:annotation>
-            <xsd:documentation>
-
-            </xsd:documentation>
+            <xsd:documentation></xsd:documentation>
         </xsd:annotation>
         <xsd:complexType mixed="true">
             <xsd:sequence>
@@ -306,8 +293,7 @@
             <xsd:attribute name="computers">
                 <xsd:annotation>
                     <xsd:documentation>
-                        If specified, this is the list of computers whose executors are rendered. If omitted, all the
-                        computers
+                        If specified, this is the list of computers whose executors are rendered. If omitted, all the computers
                         in the system will be rendered.
                     </xsd:documentation>
                 </xsd:annotation>
@@ -330,9 +316,7 @@
 
     <xsd:element name="help">
         <xsd:annotation>
-            <xsd:documentation>
-
-            </xsd:documentation>
+            <xsd:documentation></xsd:documentation>
         </xsd:annotation>
         <xsd:complexType mixed="true">
             <xsd:sequence>
@@ -343,9 +327,7 @@
 
     <xsd:element name="iconSize">
         <xsd:annotation>
-            <xsd:documentation>
-
-            </xsd:documentation>
+            <xsd:documentation></xsd:documentation>
         </xsd:annotation>
         <xsd:complexType mixed="true">
             <xsd:sequence>
@@ -439,9 +421,7 @@
 
     <xsd:element name="progressBar">
         <xsd:annotation>
-            <xsd:documentation>
-
-            </xsd:documentation>
+            <xsd:documentation></xsd:documentation>
         </xsd:annotation>
         <xsd:complexType mixed="true">
             <xsd:sequence>
@@ -452,9 +432,7 @@
 
     <xsd:element name="progressiveText">
         <xsd:annotation>
-            <xsd:documentation>
-
-            </xsd:documentation>
+            <xsd:documentation></xsd:documentation>
         </xsd:annotation>
         <xsd:complexType mixed="true">
             <xsd:sequence>
@@ -518,8 +496,7 @@
             <xsd:attribute name="columnExtensions">
                 <xsd:annotation>
                     <xsd:documentation>
-                        List view columns to render. If omitted, the default ones from ListView.getDefaultColumns() are
-                        used.
+                        List view columns to render. If omitted, the default ones from ListView.getDefaultColumns() are used.
                     </xsd:documentation>
                 </xsd:annotation>
             </xsd:attribute>
@@ -535,9 +512,7 @@
 
     <xsd:element name="projectViewNested">
         <xsd:annotation>
-            <xsd:documentation>
-
-            </xsd:documentation>
+            <xsd:documentation></xsd:documentation>
         </xsd:annotation>
         <xsd:complexType mixed="true">
             <xsd:sequence>
@@ -548,9 +523,7 @@
 
     <xsd:element name="projectViewRow">
         <xsd:annotation>
-            <xsd:documentation>
-
-            </xsd:documentation>
+            <xsd:documentation></xsd:documentation>
         </xsd:annotation>
         <xsd:complexType mixed="true">
             <xsd:sequence>
@@ -610,9 +583,7 @@
 
     <xsd:element name="rssBar-with-iconSize">
         <xsd:annotation>
-            <xsd:documentation>
-
-            </xsd:documentation>
+            <xsd:documentation></xsd:documentation>
         </xsd:annotation>
         <xsd:complexType mixed="true">
             <xsd:sequence>
@@ -623,9 +594,7 @@
 
     <xsd:element name="rssBar">
         <xsd:annotation>
-            <xsd:documentation>
-
-            </xsd:documentation>
+            <xsd:documentation></xsd:documentation>
         </xsd:annotation>
         <xsd:complexType mixed="true">
             <xsd:sequence>
@@ -636,9 +605,7 @@
 
     <xsd:element name="scriptConsole">
         <xsd:annotation>
-            <xsd:documentation>
-
-            </xsd:documentation>
+            <xsd:documentation></xsd:documentation>
         </xsd:annotation>
         <xsd:complexType mixed="true">
             <xsd:sequence>
@@ -649,9 +616,7 @@
 
     <xsd:element name="setIconSize">
         <xsd:annotation>
-            <xsd:documentation>
-
-            </xsd:documentation>
+            <xsd:documentation></xsd:documentation>
         </xsd:annotation>
         <xsd:complexType mixed="true">
             <xsd:sequence>
@@ -674,11 +639,8 @@
                 <xsd:annotation>
                     <xsd:documentation>
                         The icon class name e.g. 'icon-folder'.
-
-                        On older versions of Jenkins, this attribute value used to be a link to the raw icon image,
-                        where relative
-                        paths were resolved against images/48x48 and absolute paths (that start with '/') were resolved
-                        against
+                        On older versions of Jenkins, this attribute value used to be a link to the raw icon image, where relative
+                        paths were resolved against images/48x48 and absolute paths (that start with '/') were resolved against
                         the context root of Hudson.
                     </xsd:documentation>
                 </xsd:annotation>
@@ -722,9 +684,7 @@
 
     <xsd:element name="thirdPartyLicenses">
         <xsd:annotation>
-            <xsd:documentation>
-
-            </xsd:documentation>
+            <xsd:documentation></xsd:documentation>
         </xsd:annotation>
         <xsd:complexType mixed="true">
             <xsd:sequence>

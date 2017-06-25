@@ -8,9 +8,7 @@
 
     <xsd:element name="bar">
         <xsd:annotation>
-            <xsd:documentation>
-
-            </xsd:documentation>
+            <xsd:documentation></xsd:documentation>
         </xsd:annotation>
         <xsd:complexType mixed="true">
             <xsd:sequence>

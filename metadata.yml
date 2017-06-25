@@ -1,0 +1,15 @@
+form:
+  doc: A tag library for building form controls.
+  namespace: /lib/form
+
+hudson:
+  doc: A tag library to help building controls for the Jenkins built-in objects, such as project, job, task, build, action, etc.
+  namespace: /lib/hudson
+
+layout:
+  doc: A tag library to help building view layouts.
+  namespace: /lib/layout
+
+test:
+  doc: A tag library to help with the tests.
+  namespace: /lib/test

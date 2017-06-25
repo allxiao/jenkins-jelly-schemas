@@ -172,8 +172,7 @@
                     <xsd:documentation>
                         Normally, the submitted JSON will be boolean indicating whether the checkbox was checked or not.
                         This is sometimes inconvenient if you have a UI that lets user select a subset of a set.
-                        If this attribute is present, the submitted JSON will have this as a string value if the
-                        checkbox is checked,
+                        If this attribute is present, the submitted JSON will have this as a string value if the checkbox is checked,
                         and none otherwise, making the subset selection easier.
                     </xsd:documentation>
                 </xsd:annotation>
@@ -209,8 +208,7 @@
             <xsd:attribute name="readonly">
                 <xsd:annotation>
                     <xsd:documentation>
-                        If set to true, this will take precedence over the onclick attribute and prevent the state of
-                        the checkbox from being changed.
+                        If set to true, this will take precedence over the onclick attribute and prevent the state of the checkbox from being changed.
                     </xsd:documentation>
                 </xsd:annotation>
             </xsd:attribute>
@@ -243,8 +241,7 @@
         <xsd:annotation>
             <xsd:documentation>
                 Invisible &lt;f:entry&gt; type for embedding a descriptor's $class field.
-                Most of the time a Descriptor has an unique class name that we can use to instantiate the right
-                Describable
+                Most of the time a Descriptor has an unique class name that we can use to instantiate the right Describable
                 class, so we use the '$class' to represent that to clarify the intent.
                 In some other times, such as templates, there are multiple Descriptors with the same Descriptor.clazz
                 but different IDs, and in that case we put 'kind' to indicate that. In this case, to avoid confusing
@@ -267,7 +264,7 @@
                 <xsd:annotation>
                     <xsd:documentation>
                         The descriptor of the describable that we are instantiating via
-                        structured form submission. Mutually exclusive with clazz.
+                        structured form submission.  Mutually exclusive with clazz.
                     </xsd:documentation>
                 </xsd:annotation>
             </xsd:attribute>
@@ -344,7 +341,7 @@
             <xsd:attribute name="instances">
                 <xsd:annotation>
                     <xsd:documentation>
-                        Map<Descriptor,Describable> that defines current instances of those descriptors.
+                        Map&lt;Descriptor,Describable&gt; that defines current instances of those descriptors.
                         These are used to fill initial values. Other classes that define the get(Descriptor)
                         method works fine, too, such as DescribableList.
                     </xsd:documentation>
@@ -353,14 +350,10 @@
             <xsd:attribute name="field">
                 <xsd:annotation>
                     <xsd:documentation>
-                        Either @field or @instances are required (or @field may be inherited from the ancestor
-                        <entry>
-                        element).
+                        Either @field or @instances are required (or @field may be inherited from the ancestor &lt;entry&gt; element).
                         If field is specified, instances are assumed to be instance[field].
-
                         When this attribute is specified, JSON structure is properly set up so that the databinding
                         can set the field (or pass this collection as a constructor parameter of the same name.
-
                         This is more modern way of doing databinding, and thus preferred approach.
                     </xsd:documentation>
                 </xsd:annotation>
@@ -376,7 +369,7 @@
             <xsd:attribute name="forceRowSet">
                 <xsd:annotation>
                     <xsd:documentation>
-                        If specified, instead of a sequence of<f:optionalBlock>s, draw a sequence of<rowSet>s.
+                        If specified, instead of a sequence of &lt;f:optionalBlock&gt;s, draw a sequence of &lt;rowSet&gt;s.
                     </xsd:documentation>
                 </xsd:annotation>
             </xsd:attribute>
@@ -469,10 +462,8 @@
             <xsd:attribute name="default">
                 <xsd:annotation>
                     <xsd:documentation>
-                        If specified, this will be chosen as the default value in case the current selection is null.
-                        The default can be an specific instance or a descriptor e.g.
-                        ${descriptor.defaultSettingsProvider} or ${descriptor.defaultSettingsProvider.descriptor}. In
-                        the later case, the from input fields will be empty.
+                        If specified, this will be chosen as the default value in case the current selection is null. The default can be an specific instance or a descriptor e.g.
+                        ${descriptor.defaultSettingsProvider} or ${descriptor.defaultSettingsProvider.descriptor}. In the later case, the from input fields will be empty.
                     </xsd:documentation>
                 </xsd:annotation>
             </xsd:attribute>
@@ -502,8 +493,7 @@
                 <xsd:annotation>
                     <xsd:documentation>
                         Human readable title text of this drop-down listbox.
-                        Shown in the same position as
-                        <f:entry title="..."/>
+                        Shown in the same position as &lt;f:entry title="..." /&gt;
                     </xsd:documentation>
                 </xsd:annotation>
             </xsd:attribute>
@@ -517,8 +507,7 @@
             <xsd:attribute name="help">
                 <xsd:annotation>
                     <xsd:documentation>
-                        Path to the inline help. See
-                        <f:entry help="..."/>
+                        Path to the inline help. See &lt;f:entry help="..." /&gt;
                     </xsd:documentation>
                 </xsd:annotation>
             </xsd:attribute>
@@ -538,8 +527,7 @@
             <xsd:attribute name="value" use="required">
                 <xsd:annotation>
                     <xsd:documentation>
-                        value of the list item. set to
-                        <option value="...">
+                        value of the list item. set to &lt;option value="..."&gt;
                     </xsd:documentation>
                 </xsd:annotation>
             </xsd:attribute>
@@ -568,11 +556,8 @@
             <xsd:attribute name="lazy">
                 <xsd:annotation>
                     <xsd:documentation>
-                        If specified, the content of the dropdownListBlock will be rendered lazily when it first becomes
-                        visible.
-                        The attribute value must be the variables to be captured. See the @capture of
-                        <renderOnDemand>
-                        tag.
+                        If specified, the content of the dropdownListBlock will be rendered lazily when it first becomes visible.
+                        The attribute value must be the variables to be captured. See the @capture of &lt;renderOnDemand&gt; tag.
                     </xsd:documentation>
                 </xsd:annotation>
             </xsd:attribute>
@@ -599,7 +584,7 @@
             <xsd:attribute name="items">
                 <xsd:annotation>
                     <xsd:documentation>
-                        List of possible values. Either this or nested<f:editableComboBoxValue/>s are required.
+                        List of possible values. Either this or nested &lt;f:editableComboBoxValue/&gt;s are required.
                     </xsd:documentation>
                 </xsd:annotation>
             </xsd:attribute>
@@ -648,9 +633,7 @@
                 <xsd:annotation>
                     <xsd:documentation>
                         Name of the entry. Think of this like a label for the control.
-
-                        This content is HTML (unless the boolean variable escapeEntryTitleAndDescription is set). Use
-                        h.escape if necessary.
+                        This content is HTML (unless the boolean variable escapeEntryTitleAndDescription is set). Use h.escape if necessary.
                     </xsd:documentation>
                 </xsd:annotation>
             </xsd:attribute>
@@ -669,13 +652,10 @@
                         If it's not obvious to the user as to what the control expects,
                         specify some description text (which currently gets rendered as
                         small text under the control, but that may change.)
-
                         This text shouldn't get too long, and in recent Hudson, this feature
                         is somewhat de-emphasized, in favor of the inline foldable help page
                         specified via @help.
-
-                        This content is HTML (unless the boolean variable escapeEntryTitleAndDescription is set). Use
-                        h.escape if necessary.
+                        This content is HTML (unless the boolean variable escapeEntryTitleAndDescription is set). Use h.escape if necessary.
                     </xsd:documentation>
                 </xsd:annotation>
             </xsd:attribute>
@@ -685,10 +665,7 @@
                         URL to the HTML page. When this attribute is specified, the entry gets
                         a (?) icon on the right, and if the user clicks it, the contents of the
                         given URL is rendered as a box below the entry.
-
-                        The URL should return an HTML document wrapped in a
-                        <div>
-                        tag.
+                        The URL should return an HTML document wrapped in a &lt;div&gt; tag.
                         The URL is interpreted to be rooted at the context path of Hudson,
                         so it's normally something like "/plugin/foobar/help/abc.html".
                     </xsd:documentation>
@@ -775,9 +752,7 @@
             <xsd:attribute name="name">
                 <xsd:annotation>
                     <xsd:documentation>
-                        This becomes @name of the
-                        <input>
-                        tag.
+                        This becomes @name of the &lt;input&gt; tag.
                         If @field is specified, this value is inferred from it.
                     </xsd:documentation>
                 </xsd:annotation>
@@ -785,9 +760,7 @@
             <xsd:attribute name="value">
                 <xsd:annotation>
                     <xsd:documentation>
-                        The initial value of the field. This becomes the @value of the
-                        <input>
-                        tag.
+                        The initial value of the field. This becomes the @value of the &lt;input&gt; tag.
                         If @field is specified, the current property from the "instance" object
                         will be set as the initial value automatically,
                         which is the recommended approach.
@@ -833,19 +806,14 @@
             <xsd:attribute name="enctype">
                 <xsd:annotation>
                     <xsd:documentation>
-                        @enctype of the
-                        <form>
-                        HTML element.
+                        @enctype of the &lt;form&gt; HTML element.
                     </xsd:documentation>
                 </xsd:annotation>
             </xsd:attribute>
             <xsd:attribute name="target">
                 <xsd:annotation>
                     <xsd:documentation>
-                        @target of the
-                        <form>
-                        HTML element. Works like
-                        <a target="...">
+                        @target of the &lt;form&gt; HTML element. Works like &lt;a target="..."&gt;
                         and controls which window the result of the submission goes to.
                     </xsd:documentation>
                 </xsd:annotation>
@@ -853,17 +821,14 @@
             <xsd:attribute name="tableClass">
                 <xsd:annotation>
                     <xsd:documentation>
-                        Optional class attribute for
-                        <table>
-                        that is created in the form.
+                        Optional class attribute for &lt;table&gt; that is created in the form.
                     </xsd:documentation>
                 </xsd:annotation>
             </xsd:attribute>
             <xsd:attribute name="autocomplete">
                 <xsd:annotation>
                     <xsd:documentation>
-                        Optional attribute for allowing browsers to perform auto complete or pre-fill the form from
-                        history.
+                        Optional attribute for allowing browsers to perform auto complete or pre-fill the form from history.
                         Default: false
                     </xsd:documentation>
                 </xsd:annotation>
@@ -907,10 +872,7 @@
                 <xsd:annotation>
                     <xsd:documentation>
                         URL to the HTML page. Optional. If not given, no help icon is displayed.
-
-                        The URL should return a UTF-8 encoded HTML fragment wrapped in a
-                        <div>
-                        tag.
+                        The URL should return a UTF-8 encoded HTML fragment wrapped in a &lt;div&gt; tag.
                         The URL is interpreted to be rooted at the context path of Jenkins,
                         so it's normally something like "/plugin/foobar/help/abc.html".
                     </xsd:documentation>
@@ -932,8 +894,7 @@
             <xsd:documentation>
                 Outer most tag for creating a heterogeneous list, where the user can choose arbitrary number of
                 arbitrary items from the given list of descriptors, and configure them independently.
-                The submission can be data-bound into List&lt;T&gt; where T is the common base type for the describable
-                instances.
+                The submission can be data-bound into List&lt;T&gt; where T is the common base type for the describable instances.
                 For databinding use, please use &lt;f:repeatableHeteroProperty /&gt;
             </xsd:documentation>
         </xsd:annotation>
@@ -987,7 +948,7 @@
                 <xsd:annotation>
                     <xsd:documentation>
                         For each item, add a caption from descriptor.getDisplayName().
-                        This also activates drag&drop (where the header is a grip), and help text support.
+                        This also activates drag&amp;drop (where the header is a grip), and help text support.
                     </xsd:documentation>
                 </xsd:annotation>
             </xsd:attribute>
@@ -1028,8 +989,7 @@
     <xsd:element name="hetero-radio">
         <xsd:annotation>
             <xsd:documentation>
-                Sibling of hetero-list, which only allows the user to pick one type from the list of descriptors and
-                configure it.
+                Sibling of hetero-list, which only allows the user to pick one type from the list of descriptors and configure it.
             </xsd:documentation>
         </xsd:annotation>
         <xsd:complexType mixed="true">
@@ -1111,9 +1071,7 @@
 
     <xsd:element name="nested">
         <xsd:annotation>
-            <xsd:documentation>
-
-            </xsd:documentation>
+            <xsd:documentation></xsd:documentation>
         </xsd:annotation>
         <xsd:complexType mixed="true">
             <xsd:sequence>
@@ -1142,9 +1100,7 @@
             <xsd:attribute name="name">
                 <xsd:annotation>
                     <xsd:documentation>
-                        This becomes @name of the
-                        <input>
-                        tag.
+                        This becomes @name of the &lt;input&gt; tag.
                         If @field is specified, this value is inferred from it.
                     </xsd:documentation>
                 </xsd:annotation>
@@ -1152,9 +1108,7 @@
             <xsd:attribute name="value">
                 <xsd:annotation>
                     <xsd:documentation>
-                        The initial value of the field. This becomes the @value of the
-                        <input>
-                        tag.
+                        The initial value of the field. This becomes the @value of the &lt;input&gt; tag.
                         If @field is specified, the current property from the "instance" object
                         will be set as the initial value automatically,
                         which is the recommended approach.
@@ -1189,7 +1143,6 @@
                     <xsd:documentation>
                         If specified, the value entered in this input field will be checked (via AJAX)
                         against this URL, and errors will be rendered under the text field.
-
                         If @field is specified, this will be inferred automatically,
                         which is the recommended approach.
                     </xsd:documentation>
@@ -1243,9 +1196,8 @@
                     <xsd:documentation>
                         Name of the checkbox. Can be used by the server to determine
                         if the block is collapsed or expanded at the time of submission.
-
                         Note that when the block is collapsed, none of its child controls will send
-                        the values to the server (unlike<f:advanced>)
+                        the values to the server (unlike &lt;f:advanced&gt;)
                     </xsd:documentation>
                 </xsd:annotation>
             </xsd:attribute>
@@ -1253,8 +1205,7 @@
                 <xsd:annotation>
                     <xsd:documentation>
                         Human readable text that follows the checkbox.
-
-                        If this field is null, the checkbox degrades to a<f:rowSet>, which provides
+                        If this field is null, the checkbox degrades to a &lt;f:rowSet&gt;, which provides
                         a grouping at JSON level but on the UI there's no checkbox (and you always see
                         the body of it.)
                     </xsd:documentation>
@@ -1278,7 +1229,7 @@
                 <xsd:annotation>
                     <xsd:documentation>
                         If present, the (?) icon will be rendered on the right to show inline help.
-                        See @help for<f:entry>.
+                        See @help for &lt;f:entry&gt;.
                     </xsd:documentation>
                 </xsd:annotation>
             </xsd:attribute>
@@ -1305,8 +1256,7 @@
                 Renders inline an optional single-value nested data-bound property of the current instance,
                 by using a &lt;f:optionalBlock&gt;
                 This is useful when your object composes another data-bound object, and when that's optional,
-                where the absence of the value is signified as null (in which case the optionalBlock will be drawn
-                unchecked),
+                where the absence of the value is signified as null (in which case the optionalBlock will be drawn unchecked),
                 and the presence of the value.
             </xsd:documentation>
         </xsd:annotation>
@@ -1347,9 +1297,7 @@
             <xsd:attribute name="name">
                 <xsd:annotation>
                     <xsd:documentation>
-                        This becomes @name of the
-                        <input>
-                        tag.
+                        This becomes @name of the &lt;input&gt; tag.
                         If @field is specified, this value is inferred from it.
                     </xsd:documentation>
                 </xsd:annotation>
@@ -1357,9 +1305,7 @@
             <xsd:attribute name="value">
                 <xsd:annotation>
                     <xsd:documentation>
-                        The initial value of the field. This becomes the @value of the
-                        <input>
-                        tag.
+                        The initial value of the field. This becomes the @value of the &lt;input&gt; tag.
                         If @field is specified, the current property from the "instance" object
                         will be set as the initial value automatically,
                         which is the recommended approach.
@@ -1379,7 +1325,6 @@
                     <xsd:documentation>
                         If specified, the value entered in this input field will be checked (via AJAX)
                         against this URL, and errors will be rendered under the text field.
-
                         If @field is specified, this will be inferred automatically,
                         which is the recommended approach.
                     </xsd:documentation>
@@ -1434,8 +1379,7 @@
             <xsd:documentation>
                 &lt;input type="radio"&gt; tag that takes true/false for @checked, which is more Jelly friendly.
                 Note that safari doesn't support onchange.
-                Beware that the name attribute should be uniquified among all radio blocks on the page, such as by
-                prefixing it with "G0025." or whatever gensym.
+                Beware that the name attribute should be uniquified among all radio blocks on the page, such as by prefixing it with "G0025." or whatever gensym.
             </xsd:documentation>
         </xsd:annotation>
         <xsd:complexType mixed="true">
@@ -1503,9 +1447,7 @@
             <xsd:attribute name="value" use="required">
                 <xsd:annotation>
                     <xsd:documentation>
-                        @value of the
-                        <input>
-                        element.
+                        @value of the &lt;input&gt; element.
                     </xsd:documentation>
                 </xsd:annotation>
             </xsd:attribute>
@@ -1534,9 +1476,7 @@
                 <xsd:annotation>
                     <xsd:documentation>
                         If specified, the (?) help icon will be rendered on the right,
-                        for in place help text. See
-                        <f:entry>
-                        for the details.
+                        for in place help text. See &lt;f:entry&gt; for the details.
                     </xsd:documentation>
                 </xsd:annotation>
             </xsd:attribute>
@@ -1563,9 +1503,7 @@
             <xsd:attribute name="name">
                 <xsd:annotation>
                     <xsd:documentation>
-                        This becomes @name of the
-                        <input>
-                        tag.
+                        This becomes @name of the &lt;input&gt; tag.
                         If @field is specified, this value is inferred from it.
                     </xsd:documentation>
                 </xsd:annotation>
@@ -1573,9 +1511,7 @@
             <xsd:attribute name="value">
                 <xsd:annotation>
                     <xsd:documentation>
-                        The initial value of the field. This becomes the @value of the
-                        <input>
-                        tag.
+                        The initial value of the field. This becomes the @value of the &lt;input&gt; tag.
                         If @field is specified, the current property from the "instance" object
                         will be set as the initial value automatically,
                         which is the recommended approach.
@@ -1610,7 +1546,6 @@
                     <xsd:documentation>
                         If specified, the value entered in this input field will be checked (via AJAX)
                         against this URL, and errors will be rendered under the text field.
-
                         If @field is specified, this will be inferred automatically,
                         which is the recommended approach.
                     </xsd:documentation>
@@ -1631,7 +1566,7 @@
                 h1. HTML structure
                 this tag mainly produces the nested DIVs with CSS classes as follows:
                 {noformat}
-                &lt;div class="repeated-container"&gt; // container for the whole thing
+                &lt;div class="repeated-container"&gt;   // container for the whole thing
                 &lt;div class="repeated-chunk"&gt;
                 ... copy 1 ...
                 &lt;div class="repeated-chunk"&gt;
@@ -1641,9 +1576,9 @@
                 The 'repeated-chunk' DIVs will also have additional CSS classes that represent
                 their positions among siblings:
                 first : first chunk among the siblings
-                last : last chunk among the siblings
+                last  : last chunk among the siblings
                 middle: neither first nor last
-                only : it is the only chunk (automatically get first and last at the same time)
+                only  : it is the only chunk (automatically get first and last at the same time)
                 h1. Usage Note
                 The caller of this tag should define a button to add a new copy and delete
                 the current copy. Such buttons should have 'repeatable-add' CSS class and
@@ -1730,7 +1665,7 @@
                 <xsd:annotation>
                     <xsd:documentation>
                         For each item, add this header.
-                        This also activates drag&drop (where the header is a grip).
+                        This also activates drag&amp;drop (where the header is a grip).
                     </xsd:documentation>
                 </xsd:annotation>
             </xsd:attribute>
@@ -1760,8 +1695,7 @@
     <xsd:element name="repeatableHeteroProperty">
         <xsd:annotation>
             <xsd:documentation>
-                Data-bound only version of &lt;f:hetero-list&gt; that assumes the type pointed by the property is
-                data-bound as well.
+                Data-bound only version of &lt;f:hetero-list&gt; that assumes the type pointed by the property is data-bound as well.
                 The nested property type must be Describable and it needs to have config.jelly.
             </xsd:documentation>
         </xsd:annotation>
@@ -1801,7 +1735,7 @@
                 <xsd:annotation>
                     <xsd:documentation>
                         For each item, add a caption from descriptor.getDisplayName().
-                        This also activates drag&drop (where the header is a grip), and help text support.
+                        This also activates drag&amp;drop (where the header is a grip), and help text support.
                     </xsd:documentation>
                 </xsd:annotation>
             </xsd:attribute>
@@ -1842,11 +1776,9 @@
     <xsd:element name="repeatableProperty">
         <xsd:annotation>
             <xsd:documentation>
-                Data-bound only version of &lt;f:repeatable&gt; that assumes the type pointed by the property is
-                data-bound as well.
+                Data-bound only version of &lt;f:repeatable&gt; that assumes the type pointed by the property is data-bound as well.
                 The nested property type must be Describable and it needs to have config.jelly.
-                Unless that nested config.jelly already adds a delete button (deprecated), you should normally put the
-                following inside this tag:
+                Unless that nested config.jelly already adds a delete button (deprecated), you should normally put the following inside this tag:
                 &lt;f:entry title=""&gt;
                 &lt;div align="right"&gt;
                 &lt;f:repeatableDeleteButton /&gt;
@@ -1899,7 +1831,7 @@
                 <xsd:annotation>
                     <xsd:documentation>
                         For each item, add this header.
-                        This also activates drag&drop (where the header is a grip).
+                        This also activates drag&amp;drop (where the header is a grip).
                     </xsd:documentation>
                 </xsd:annotation>
             </xsd:attribute>
@@ -1983,9 +1915,7 @@
                 <xsd:annotation>
                     <xsd:documentation>
                         The section header text.
-                        If null is given, the entire
-                        <f:section>
-                        tag becomes no-op.
+                        If null is given, the entire &lt;f:section&gt; tag becomes no-op.
                     </xsd:documentation>
                 </xsd:annotation>
             </xsd:attribute>
@@ -2049,9 +1979,7 @@
             <xsd:attribute name="name">
                 <xsd:annotation>
                     <xsd:documentation>
-                        Name of the
-                        <select>
-                        element.
+                        Name of the &lt;select&gt; element.
                     </xsd:documentation>
                 </xsd:annotation>
             </xsd:attribute>
@@ -2116,9 +2044,7 @@
             <xsd:attribute name="name">
                 <xsd:annotation>
                     <xsd:documentation>
-                        This becomes @name of the
-                        <textarea>
-                        tag.
+                        This becomes @name of the &lt;textarea&gt; tag.
                         If @field is specified, this value is inferred from it.
                     </xsd:documentation>
                 </xsd:annotation>
@@ -2126,9 +2052,7 @@
             <xsd:attribute name="value">
                 <xsd:annotation>
                     <xsd:documentation>
-                        The initial value of the field. This becomes the value of the
-                        <textarea>
-                        tag.
+                        The initial value of the field. This becomes the value of the &lt;textarea&gt; tag.
                         If @field is specified, the current property from the "instance" object
                         will be set as the initial value automatically,
                         which is the recommended approach.
@@ -2147,7 +2071,6 @@
                     <xsd:documentation>
                         If specified, the value entered in this input field will be checked (via AJAX)
                         against this URL, and errors will be rendered under the text field.
-
                         If @field is specified, this will be inferred automatically,
                         which is the recommended approach.
                     </xsd:documentation>
@@ -2216,9 +2139,7 @@
             <xsd:attribute name="name">
                 <xsd:annotation>
                     <xsd:documentation>
-                        This becomes @name of the
-                        <input>
-                        tag.
+                        This becomes @name of the &lt;input&gt; tag.
                         If @field is specified, this value is inferred from it.
                     </xsd:documentation>
                 </xsd:annotation>
@@ -2226,9 +2147,7 @@
             <xsd:attribute name="value">
                 <xsd:annotation>
                     <xsd:documentation>
-                        The initial value of the field. This becomes the @value of the
-                        <input>
-                        tag.
+                        The initial value of the field. This becomes the @value of the &lt;input&gt; tag.
                         If @field is specified, the current property from the "instance" object
                         will be set as the initial value automatically,
                         which is the recommended approach.
@@ -2263,7 +2182,6 @@
                     <xsd:documentation>
                         If specified, the value entered in this input field will be checked (via AJAX)
                         against this URL, and errors will be rendered under the text field.
-
                         If @field is specified, this will be inferred automatically,
                         which is the recommended approach.
                     </xsd:documentation>
@@ -2297,8 +2215,7 @@
             <xsd:attribute name="method" use="required">
                 <xsd:annotation>
                     <xsd:documentation>
-                        Server-side method that handles the validation. For example, if this is 'foo', you need "doFoo"
-                        on
+                        Server-side method that handles the validation. For example, if this is 'foo', you need "doFoo" on
                         your descriptor class.
                     </xsd:documentation>
                 </xsd:annotation>
@@ -2339,8 +2256,7 @@
             </xsd:sequence>
             <xsd:attribute name="value" use="required">
                 <xsd:annotation>
-                    <xsd:documentation>
-                    </xsd:documentation>
+                    <xsd:documentation></xsd:documentation>
                 </xsd:annotation>
             </xsd:attribute>
         </xsd:complexType>

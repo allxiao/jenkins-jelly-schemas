@@ -180,10 +180,8 @@
             <xsd:attribute name="container">
                 <xsd:annotation>
                     <xsd:documentation>
-                        Specify the CSS selector (like ".foo") that points to the ancestor block element that has
-                        "positive:relative".
-                        According to ZeroClipboard documentation, having such container would improve the accuracy of
-                        invisible flash
+                        Specify the CSS selector (like ".foo") that points to the ancestor block element that has "positive:relative".
+                        According to ZeroClipboard documentation, having such container would improve the accuracy of invisible flash
                         overlay.
                     </xsd:documentation>
                 </xsd:annotation>
@@ -214,9 +212,7 @@
 
     <xsd:element name="expandButton">
         <xsd:annotation>
-            <xsd:documentation>
-
-            </xsd:documentation>
+            <xsd:documentation></xsd:documentation>
         </xsd:annotation>
         <xsd:complexType mixed="true">
             <xsd:sequence>
@@ -274,9 +270,7 @@
             <xsd:attribute name="title" use="required">
                 <xsd:annotation>
                     <xsd:documentation>
-                        Title of the HTML page. Rendered into
-                        <title>
-                        tag.
+                        Title of the HTML page. Rendered into &lt;title&gt; tag.
                     </xsd:documentation>
                 </xsd:annotation>
             </xsd:attribute>
@@ -293,19 +287,11 @@
                     <xsd:documentation>
                         specify path that starts from "/" for loading additional CSS stylesheet.
                         path is interpreted as relative to the context root. e.g.,
-
-                        {noformat}<l:layout css="/plugin/mysuperplugin/css/myneatstyle.css">{noformat}
-
+                        {noformat}&lt;l:layout css="/plugin/mysuperplugin/css/myneatstyle.css"&gt;{noformat}
                         This was originally added to allow plugins to load their stylesheets, but
                         *the use of this attribute is discouraged now.*
-                        plugins should now do so by inserting
-                        <style>
-                        elements and/or
-                        <script>
-                        elements
-                        in
-                        <l:header/>
-                        tag.
+                        plugins should now do so by inserting &lt;style&gt; elements and/or &lt;script&gt; elements
+                        in &lt;l:header/&gt; tag.
                     </xsd:documentation>
                 </xsd:annotation>
             </xsd:attribute>
@@ -333,8 +319,7 @@
             <xsd:attribute name="class">
                 <xsd:annotation>
                     <xsd:documentation>
-                        The icon class specification e.g. 'icon-help icon-sm', 'icon-blue icon-md', 'icon-blue-anime
-                        icon-xlg'.
+                        The icon class specification e.g. 'icon-help icon-sm', 'icon-blue icon-md', 'icon-blue-anime icon-xlg'.
                     </xsd:documentation>
                 </xsd:annotation>
             </xsd:attribute>
@@ -347,27 +332,37 @@
             </xsd:attribute>
             <xsd:attribute name="onclick">
                 <xsd:annotation>
-                    <xsd:documentation>onclick handler.</xsd:documentation>
+                    <xsd:documentation>
+                        onclick handler.
+                    </xsd:documentation>
                 </xsd:annotation>
             </xsd:attribute>
             <xsd:attribute name="title">
                 <xsd:annotation>
-                    <xsd:documentation>title</xsd:documentation>
+                    <xsd:documentation>
+                        title
+                    </xsd:documentation>
                 </xsd:annotation>
             </xsd:attribute>
             <xsd:attribute name="style">
                 <xsd:annotation>
-                    <xsd:documentation>style</xsd:documentation>
+                    <xsd:documentation>
+                        style
+                    </xsd:documentation>
                 </xsd:annotation>
             </xsd:attribute>
             <xsd:attribute name="tooltip">
                 <xsd:annotation>
-                    <xsd:documentation>tooltip</xsd:documentation>
+                    <xsd:documentation>
+                        tooltip
+                    </xsd:documentation>
                 </xsd:annotation>
             </xsd:attribute>
             <xsd:attribute name="alt">
                 <xsd:annotation>
-                    <xsd:documentation>alt</xsd:documentation>
+                    <xsd:documentation>
+                        alt
+                    </xsd:documentation>
                 </xsd:annotation>
             </xsd:attribute>
         </xsd:complexType>
@@ -375,9 +370,7 @@
 
     <xsd:element name="isAdmin">
         <xsd:annotation>
-            <xsd:documentation>
-
-            </xsd:documentation>
+            <xsd:documentation></xsd:documentation>
         </xsd:annotation>
         <xsd:complexType mixed="true">
             <xsd:sequence>
@@ -435,9 +428,7 @@
             <xsd:attribute name="title" use="required">
                 <xsd:annotation>
                     <xsd:documentation>
-                        Title of the HTML page. Rendered into
-                        <title>
-                        tag.
+                        Title of the HTML page. Rendered into &lt;title&gt; tag.
                     </xsd:documentation>
                 </xsd:annotation>
             </xsd:attribute>
@@ -454,19 +445,11 @@
                     <xsd:documentation>
                         specify path that starts from "/" for loading additional CSS stylesheet.
                         path is interpreted as relative to the context root. e.g.,
-
-                        {noformat}<l:layout css="/plugin/mysuperplugin/css/myneatstyle.css">{noformat}
-
+                        {noformat}&lt;l:layout css="/plugin/mysuperplugin/css/myneatstyle.css"&gt;{noformat}
                         This was originally added to allow plugins to load their stylesheets, but
                         *the use of the attribute is discouraged now.*
-                        plugins should now do so by inserting
-                        <style>
-                        elements and/or
-                        <script>
-                        elements
-                        in
-                        <l:header/>
-                        tag.
+                        plugins should now do so by inserting &lt;style&gt; elements and/or &lt;script&gt; elements
+                        in &lt;l:header/&gt; tag.
                     </xsd:documentation>
                 </xsd:annotation>
             </xsd:attribute>
@@ -481,8 +464,7 @@
             <xsd:attribute name="type" use="optional">
                 <xsd:annotation>
                     <xsd:documentation>
-                        Available values: two-column (by default), one-column (full-width size) or full-screen (since
-                        TODO).
+                        Available values: two-column (by default), one-column (full-width size) or full-screen (since TODO).
                     </xsd:documentation>
                 </xsd:annotation>
             </xsd:attribute>
@@ -556,9 +538,7 @@
 
     <xsd:element name="progressiveRendering">
         <xsd:annotation>
-            <xsd:documentation>
-
-            </xsd:documentation>
+            <xsd:documentation></xsd:documentation>
         </xsd:annotation>
         <xsd:complexType mixed="true">
             <xsd:sequence>
@@ -574,8 +554,7 @@
             <xsd:attribute name="callback" use="required">
                 <xsd:annotation>
                     <xsd:documentation>
-                        JavaScript expression that evaluates to the function taking one JSON-valued parameter which
-                        renders results as they come.
+                        JavaScript expression that evaluates to the function taking one JSON-valued parameter which renders results as they come.
                     </xsd:documentation>
                 </xsd:annotation>
             </xsd:attribute>
@@ -591,9 +570,7 @@
 
     <xsd:element name="renderOnDemand">
         <xsd:annotation>
-            <xsd:documentation>
-
-            </xsd:documentation>
+            <xsd:documentation></xsd:documentation>
         </xsd:annotation>
         <xsd:complexType mixed="true">
             <xsd:sequence>
@@ -641,8 +618,7 @@
     <xsd:element name="side-panel">
         <xsd:annotation>
             <xsd:documentation>
-                Generates a left side content as part of a Jenkins page. Typically known as two-column or left-side +
-                main-content layouts
+                Generates a left side content as part of a Jenkins page. Typically known as two-column or left-side +  main-content layouts
             </xsd:documentation>
         </xsd:annotation>
         <xsd:complexType mixed="true">
@@ -679,8 +655,7 @@
             <xsd:attribute name="confirm" use="optional">
                 <xsd:annotation>
                     <xsd:documentation>
-                        If defined, the user will be asked for confirmation first, and the value will be used as
-                        question.
+                        If defined, the user will be asked for confirmation first, and the value will be used as question.
                     </xsd:documentation>
                 </xsd:annotation>
             </xsd:attribute>
@@ -689,9 +664,7 @@
 
     <xsd:element name="tab">
         <xsd:annotation>
-            <xsd:documentation>
-
-            </xsd:documentation>
+            <xsd:documentation></xsd:documentation>
         </xsd:annotation>
         <xsd:complexType mixed="true">
             <xsd:sequence>
@@ -730,9 +703,7 @@
 
     <xsd:element name="tabBar">
         <xsd:annotation>
-            <xsd:documentation>
-
-            </xsd:documentation>
+            <xsd:documentation></xsd:documentation>
         </xsd:annotation>
         <xsd:complexType mixed="true">
             <xsd:sequence>
@@ -741,7 +712,7 @@
             <xsd:attribute name="class">
                 <xsd:annotation>
                     <xsd:documentation>
-                        'tabBarFrame' class specification. This will allow styling.
+                        'tabBarFrame' class specification.  This will allow styling.
                     </xsd:documentation>
                 </xsd:annotation>
             </xsd:attribute>
@@ -769,15 +740,12 @@
             <xsd:attribute name="icon" use="required">
                 <xsd:annotation>
                     <xsd:documentation>
-                        URL to an icon image, or the icon class specification. If using an image URL,
+                        URL to an icon image, or the icon class specification.  If using an image URL,
                         the image should be 24x24 in size and relative to the context path of Hudson.
-
                         Common values include:
-
                         # "icon-folder icon-md" is an example of using a class spec for a medium folder icon
                         # "images/24x24/..." then points to the stock icon resources
-                        # "plugin/foobar/abc/def.png" that points to "src/main/webapp/abc/def.png" in your plugin
-                        resources
+                        # "plugin/foobar/abc/def.png" that points to "src/main/webapp/abc/def.png" in your plugin resources
                     </xsd:documentation>
                 </xsd:annotation>
             </xsd:attribute>
@@ -807,7 +775,6 @@
                     <xsd:documentation>
                         If specified, the link will be only displayed when the current user
                         has the specified permission against the "it" object.
-
                         This is useful for showing links to restricted pages, as showing
                         them to unprivileged users don't make sense.
                     </xsd:documentation>
@@ -845,9 +812,7 @@
 
     <xsd:element name="tasks">
         <xsd:annotation>
-            <xsd:documentation>
-
-            </xsd:documentation>
+            <xsd:documentation></xsd:documentation>
         </xsd:annotation>
         <xsd:complexType mixed="true">
             <xsd:sequence>
